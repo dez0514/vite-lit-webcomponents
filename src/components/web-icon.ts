@@ -1,5 +1,6 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+// import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 // 图片 // unsafeHtml // unsafeCss
 
 @customElement('web-icon')
