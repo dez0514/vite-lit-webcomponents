@@ -1,8 +1,6 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-// import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-// 图片 // unsafeHtml // unsafeCss
-
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 @customElement('web-icon')
 export class WebIcon extends LitElement {
   static styles = css`
@@ -15,8 +13,6 @@ export class WebIcon extends LitElement {
         overflow: hidden;
         display:block;
         margin: auto;
-        width: 1em;
-        height: 1em;
         /* fill: currentColor; */
         fill: blue;
     }
@@ -30,14 +26,18 @@ export class WebIcon extends LitElement {
   @property({type: String})
   path = ''
 
-  @property({ type: Number})
-  size = 10
+  @property({ type: Number || String })
+  size = 30
   
   render() {
+    const svg = `<use id="use" xlink:href="/src/iconfont/icon.svg#icon-${this.name}"></use>`
+    // const svg = `
+    //   <image xlink:href="http://f10.baidu.com/it/u=107851725,1461296661&fm=76" width="100%" height="100%"></image>
+    // `
     return html`
-    <svg xmlns="http://www.w3.org/1999/xlink" class="icon" id="icon" aria-hidden="true" viewBox="0 0 1024 1024" style="font-size:40px">
-       <use id="use" xlink:href="../iconfont/icon.svg#icon-user"></use>
-    </svg>
+      <svg class="icon" width=${this.size} height=${this.size} xmlns="http://www.w3.org/2000/xlink" viewBox="0 0 100 100">
+        ${unsafeSVG(svg)}
+      </svg>
     `
   }
 }

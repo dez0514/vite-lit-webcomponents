@@ -48,18 +48,17 @@ export class WebLoading extends LitElement {
             } 
         }
   `
-    @property()
+    @property({ type: String || Number })
     size = ''
-    color = ''
 
-    @property({ type: Number })
-    count = 0
+    @property({ type: String })
+    color = ''
 
     render() {
         return html`
-    <svg class="loading" id="loading" viewBox="22 22 44 44"><circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg>
-    <slot></slot>
-    `
+            <svg class="loading" id="loading" viewBox="22 22 44 44"><circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg>
+            <slot></slot>
+        `
     }
 }
 
