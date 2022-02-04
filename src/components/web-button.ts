@@ -16,6 +16,7 @@ export class WebButton extends LitElement {
   render() {
     return html`
     <button part="button">按钮</button>
+    <div>按钮</div>
     `
   }
 }

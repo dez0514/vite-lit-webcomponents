@@ -30,10 +30,12 @@ export class WebIcon extends LitElement {
   size = 30
   
   render() {
-    const svg = `<use id="use" xlink:href="/src/iconfont/icon.svg#icon-${this.name}"></use>`
-    // const svg = `
-    //   <image xlink:href="http://f10.baidu.com/it/u=107851725,1461296661&fm=76" width="100%" height="100%"></image>
-    // `
+    let svg = ''
+    if(this.name) {
+      svg = `<use id="use" xlink:href="/src/iconfont/icon.svg#icon-${this.name}"></use>`
+    } else if(this.path) {
+      svg = `<image xlink:href="${this.path}" width="100%" height="100%"></image>`
+    }
     return html`
       <svg class="icon" width=${this.size} height=${this.size} xmlns="http://www.w3.org/2000/xlink" viewBox="0 0 100 100">
         ${unsafeSVG(svg)}
