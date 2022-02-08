@@ -4,15 +4,32 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Lit App</title>
+    <title>web components</title>
     <script type="module" src="/src/index.ts"></script>
+    <style>
+      :root {
+        --themeColor: blue;
+      }
+    </style>
   </head>
   <body>
     <my-element>
       <p>This is child content</p>
     </my-element>
-    <web-loading></web-loading>
-    <web-button></web-button>
+    <h3>icon:</h3>
     <web-icon name="user" size="16"></web-icon>
+    <web-icon name="user"></web-icon>
+    <web-icon name="location"></web-icon>
+    <web-icon name="message"></web-icon>
+    <web-icon name="heart"></web-icon>
+    <web-icon name="send"></web-icon>
+    <web-icon name="comment"></web-icon>
+    <web-icon name="audio"></web-icon>
+    <h3>loading:</h3>
+    <web-loading></web-loading>
+    <web-loading>加载中...</web-loading>
+    <h3>button:</h3>
+    <web-button></web-button>
+    
   </body>
 </html>

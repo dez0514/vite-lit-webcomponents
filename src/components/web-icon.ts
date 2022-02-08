@@ -13,27 +13,26 @@ export class WebIcon extends LitElement {
         overflow: hidden;
         display:block;
         margin: auto;
-        /* fill: currentColor; */
-        fill: blue;
+        fill: var(--themeColor, #42b983);
     }
   `
-  @property({type: String})
+  @property({ type: String })
   name = ''
 
-  @property({type: String})
+  @property({ type: String })
   color = ''
 
-  @property({type: String})
+  @property({ type: String })
   path = ''
 
   @property({ type: Number || String })
   size = 30
-  
+
   render() {
     let svg = ''
-    if(this.name) {
+    if (this.name) {
       svg = `<use id="use" xlink:href="/src/iconfont/icon.svg#icon-${this.name}"></use>`
-    } else if(this.path) {
+    } else if (this.path) {
       svg = `<image xlink:href="${this.path}" width="100%" height="100%"></image>`
     }
     return html`
