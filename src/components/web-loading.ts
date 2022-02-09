@@ -4,7 +4,10 @@ import { customElement, property } from 'lit/decorators.js'
 @customElement('web-loading')
 export class WebLoading extends LitElement {
     static styles = css`
-        :host{
+        :host {
+            display:inline-block;
+        }
+        .spiner{
             font-size:inherit;
             display:inline-flex;
             align-items: center;
@@ -49,15 +52,20 @@ export class WebLoading extends LitElement {
         }
   `
     @property({ type: String || Number })
-    size = ''
+    size = 30
 
     @property({ type: String })
     color = ''
 
+    @property({ type: String })
+    direction = 'row'
+
     render() {
         return html`
-            <svg class="loading" id="loading" viewBox="22 22 44 44"><circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg>
-            <slot></slot>
+            <div class="spiner" style="flex-direction:${this.direction !== 'column' ? 'row' : 'column'}">
+                <svg class="loading" id="loading" viewBox="22 22 44 44"><circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg>
+                <slot></slot>
+            </div>
         `
     }
 }

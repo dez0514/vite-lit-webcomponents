@@ -5,18 +5,23 @@ import { customElement, property } from 'lit/decorators.js'
 export class WebButton extends LitElement {
   static styles = css`
     :host {
-        display: inline-block;
+      display: inline-block;
     }
   `
+  @property({ type: String })
+  text = '按钮'
 
+  @property({ type: String })
+  disable = false
 
-  @property({ type: Number })
-  count = 0
+  handleClick() {
+    console.log(1234)
+  }
 
   render() {
+    // <button part="button">${this.text}</button>
     return html`
-    <button part="button">按钮</button>
-    <div>按钮</div>
+    <div @click="${this.handleClick}">${this.text}</div>
     `
   }
 }

@@ -37,6 +37,9 @@ export class WebIcon extends LitElement {
     }
     return html`
       <svg class="icon" width=${this.size} height=${this.size} xmlns="http://www.w3.org/2000/xlink" viewBox="0 0 100 100">
+        <style>
+          #use { fill: ${this.color} }
+        </style> 
         ${unsafeSVG(svg)}
       </svg>
     `
