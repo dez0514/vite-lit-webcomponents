@@ -6,8 +6,6 @@ export class WebLoading extends LitElement {
     static styles = css`
         :host {
             display:inline-block;
-        }
-        .spiner{
             font-size:inherit;
             display:inline-flex;
             align-items: center;
@@ -16,8 +14,8 @@ export class WebLoading extends LitElement {
         }
         .loading{
             display: block;
-            width: 1em;
-            height: 1em;
+            width: 100%;
+            height: 100%;
             margin: auto;
             animation: rotate 1.4s linear infinite;
         }
@@ -28,7 +26,7 @@ export class WebLoading extends LitElement {
             stroke-dashoffset: 0px;
             transition:.3s;
         }
-        :host(:not(:empty)) .loading{
+        :host(:not(:empty)) .spiner {
             margin:.5em;
         }
         @keyframes rotate{
@@ -52,7 +50,7 @@ export class WebLoading extends LitElement {
         }
   `
     @property({ type: String || Number })
-    size = 30
+    size = 14
 
     @property({ type: String })
     color = ''
@@ -62,10 +60,10 @@ export class WebLoading extends LitElement {
 
     render() {
         return html`
-            <div class="spiner" style="flex-direction:${this.direction !== 'column' ? 'row' : 'column'}">
-                <svg class="loading" id="loading" viewBox="22 22 44 44"><circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg>
-                <slot></slot>
+            <div class="spiner" style="width:${this.size}px;height:${this.size}px;flex-direction:${this.direction !== 'column' ? 'row' : 'column'}">
+                <svg class="loading" viewBox="22 22 44 44"><circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg>
             </div>
+            <slot></slot>
         `
     }
 }

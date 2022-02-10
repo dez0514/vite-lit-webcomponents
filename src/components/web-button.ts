@@ -1,10 +1,15 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { unsafeHTML } from 'lit/directives/unsafe-html.js'
+import './web-loading'
 
 @customElement('web-button')
 export class WebButton extends LitElement {
   static styles = css`
     :host {
+      
+    }
+    .web-button {
       position:relative; 
       display:inline-flex; 
       padding: .4em .8em;
@@ -45,9 +50,14 @@ export class WebButton extends LitElement {
       color:var(--themeColor,#42b983); 
       border-color: var(--themeColor,#42b983); 
     }
-    ::slotted(web-icon){
-      width: 14px;
-      height: 14px;
+    web-loading {
+      margin-right: 0.2em;
+      color: inherit;
+    }
+    :host([disabled]),:host([loading]){
+      cursor: not-allowed;
+      /* pointer-events: none; */
+      opacity:.6; 
     }
     :host(:empty){
       display:  none;
@@ -56,9 +66,6 @@ export class WebButton extends LitElement {
 
   @property({ type: String })
   type = 'default' // primary, dashed , danger, text
-
-  @property({ type: Boolean })
-  plain = false
 
   @property({ type: Boolean })
   round = false
@@ -72,9 +79,15 @@ export class WebButton extends LitElement {
   @property({ type: String })
   icon = ''
 
+  @property({ type: Boolean })
+  loading = false
+
   render() {
     return html`
+    <div class='web-button'>
+      ${this.loading ? unsafeHTML('<web-loading></web-loading>') : ''}
       <slot></slot>
+    </div>
     `
   }
 }
