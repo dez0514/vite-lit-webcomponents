@@ -26,7 +26,7 @@ export class WebIcon extends LitElement {
   path = ''
 
   @property({ type: Number || String })
-  size = 16
+  size = 14
 
   render() {
     let svg = ''
@@ -37,10 +37,7 @@ export class WebIcon extends LitElement {
     }
     return html`
     <div style="width:${this.size}px;height:${this.size}px">
-      <svg class="icon" width="100%" height="100%" xmlns="http://www.w3.org/2000/xlink" viewBox="0 0 100 100">
-        <style>
-          #use { fill: ${this.color} }
-        </style> 
+      <svg class="icon" style="fill: ${this.color}" width="100%" height="100%" xmlns="http://www.w3.org/2000/xlink" viewBox="0 0 100 100">
         ${unsafeSVG(svg)}
       </svg>
     <div>

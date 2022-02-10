@@ -7,6 +7,13 @@
     <title>web components</title>
     <script type="module" src="/src/index.ts"></script>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 10px;
+      }
       :root {
         --themeColor: blue;
       }
@@ -29,7 +36,7 @@
     <my-element>
       <p>This is child content</p>
     </my-element>
-    <!-- <div class="box">
+    <div class="box">
       <div class="title">组件名：web-icon</div>
       <div class="prop">props: size, color, name, path</div>
       <div class="extra">name取值: user,location,message,heart,send,comment,audio</div>
@@ -49,25 +56,35 @@
       <div class="extra">接受插槽小图标搭配文字, 垂直放置direction="column"</div>
     </div>
     <web-loading></web-loading>
-    <web-loading>加载中...</web-loading>
-    <web-loading direction="column">疯狂加载中...</web-loading>
+    <web-loading color="red">加载中...</web-loading>
+    <web-loading direction="column" color="pink" size="26">疯狂加载中...</web-loading>
     <div class="box">
       <div class="title">组件名：web-button</div>
       <div class="prop"></div>
       <div class="extra"></div>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <web-button></web-button>
       <web-button>按钮</web-button>
       <web-button type="primary">primary</web-button>
       <web-button type="danger">danger</web-button>
       <web-button type="dashed">dashed</web-button>
       <web-button type="text">text</web-button>
-    </div> -->
+    </div>
     <div style="margin-top: 5px;">
-      <!-- <web-button type="primary">按钮图标<web-icon name="location" color="red" style="margin-left:2px"></web-icon></web-button> -->
+      <web-button type="primary">按钮图标<web-icon name="location" color="red"></web-icon></web-button>
+      <web-button icon="location">按钮图标</web-button>
       <web-button loading="true">loading</web-button>
       <web-button disabled>disabled</web-button>
+      <web-button round>round</web-button>
+      <web-button circle><web-icon name="location"></web-icon></web-button>
+      <web-button icon="location" circle></web-button>
+      <web-button icon="location" circle loading></web-button>
+      <web-button circle loading></web-button>
+    </div>
+    <div style="margin-top: 5px;">
+      <web-button block>block</web-button>
+      <web-button style="margin-top: 5px;" type="primary" block>block</web-button>
     </div>
   </body>
 </html>

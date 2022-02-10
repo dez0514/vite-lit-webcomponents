@@ -5,12 +5,16 @@ import { customElement, property } from 'lit/decorators.js'
 export class WebLoading extends LitElement {
     static styles = css`
         :host {
-            display:inline-block;
             font-size:inherit;
             display:inline-flex;
             align-items: center;
             justify-content:center;
             color:var(--themeColor, #42b983);
+        }
+        .web-loading {
+            display:inline-flex;
+            align-items: center;
+            justify-content:center;
         }
         .loading{
             display: block;
@@ -60,10 +64,12 @@ export class WebLoading extends LitElement {
 
     render() {
         return html`
-            <div class="spiner" style="width:${this.size}px;height:${this.size}px;flex-direction:${this.direction !== 'column' ? 'row' : 'column'}">
+        <div class="web-loading" style="color:${this.color};flex-direction:${this.direction !== 'column' ? 'row' : 'column'}">
+            <div class="spiner" style="width:${this.size}px;height:${this.size}px;">
                 <svg class="loading" viewBox="22 22 44 44"><circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg>
             </div>
             <slot></slot>
+        </div>
         `
     }
 }
