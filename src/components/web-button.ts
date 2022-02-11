@@ -3,7 +3,9 @@ import { customElement, property } from 'lit/decorators.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import './web-loading'
 import './web-icon'
-
+/**
+ * Button.
+ */
 @customElement('web-button')
 export class WebButton extends LitElement {
   static styles = css`
@@ -86,25 +88,39 @@ export class WebButton extends LitElement {
       display:  none;
     }
   `
-
+  /** 
+   * button type
+  */
   @property({ type: String })
   type = 'default' // primary, dashed , danger, text
-
+  /** 
+   * button round shape
+  */
   @property({ type: Boolean })
   round = false
-
+  /** 
+   * button round cicle
+  */
   @property({ type: Boolean })
   circle = false
-
+  /** 
+   * button disable
+  */
   @property({ type: Boolean })
   disabled = false
-
+  /** 
+   * button icon
+  */
   @property({ type: String })
   icon = ''
-
+  /** 
+   * button loading
+  */
   @property({ type: Boolean })
   loading = false
-
+  /** 
+   * button block
+  */
   @property({ type: Boolean })
   block = false
 

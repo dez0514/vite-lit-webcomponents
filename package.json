@@ -15,7 +15,7 @@
     "lit"
   ],
   "scripts": {
-    "analyze": "custom-elements-manifest analyze --globs 'src/index.ts' --outdir dist",
+    "analyze": "custom-elements-manifest analyze --globs 'src/components/web-button.ts' --outdir dist",
     "dev": "vite",
     "build": "tsc && vite build && npm run copy:demo && npm run docs:gen",
     "copy:demo": "cp demo/* dist/",
@@ -24,7 +24,9 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "fs": "0.0.1-security",
+    "lit": "^2.0.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.5.7",
