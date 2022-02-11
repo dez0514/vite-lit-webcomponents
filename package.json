@@ -17,10 +17,10 @@
   "scripts": {
     "analyze": "custom-elements-manifest analyze --globs 'src/components/web-button.ts' --outdir dist",
     "dev": "vite",
-    "build": "tsc && vite build && npm run copy:demo && npm run docs:gen",
-    "copy:demo": "cp demo/* dist/",
+    "build": "tsc && vite build && npm run copy && npm run docs",
+    "copy": "cp ./index.html dist/",
     "preview": "vite preview",
-    "docs:gen": "npm run analyze && esmo scripts/gen-docs.ts",
+    "docs": "npm run analyze && esmo scripts/docs.ts",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

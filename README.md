@@ -29,6 +29,10 @@
     }
 ```
 #### 动态生成组件文档
+1. 在package.json中添加customElements项，指定文档json生成位置。
+2. 利用 @custom-elements-manifest/analyze 插件分析指定组件中的注释，自动解析 class 生成相关参数的信息 custom-elements.json。
+3. 利用 @custom-elements-manifest/to-markdown 插件结合 custom-elements.json 生成文档，最后再拿到内容插入到 READ.md 中指定位置。
+
 <!-- wc-api:start -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->

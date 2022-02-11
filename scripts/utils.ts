@@ -7,7 +7,6 @@ export function injectContentBetweenTags(
     const endTag = `<!-- ${namespace}:end -->`
     const startIndex = content.indexOf(startTag)
     const endIndex = content.indexOf(endTag, startIndex)
-  
     if (startIndex === -1 || endIndex === -1) {
       console.log(`Can not find ${startTag} and ${endTag}.`)
       return ''

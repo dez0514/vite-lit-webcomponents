@@ -1,14 +1,14 @@
 import * as fs from "fs";
 import * as path from "path";
 import { customElementsManifestToMarkdown } from "@custom-elements-manifest/to-markdown";
-
 import { injectContentBetweenTags } from "./utils";
 import * as manifest from "../dist/custom-elements.json";
 
 // ES Module
 // https://github.com/nodejs/help/issues/2907
-import { fileURLToPath } from "url";
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // ignore styles & methods
 delete manifest.modules[0].exports;
@@ -25,12 +25,6 @@ const apiMd = customElementsManifestToMarkdown(customManifest, {
 
 const readmePath = path.resolve(__dirname, "../README.md");
 const rawMd = fs.readFileSync(readmePath, "utf-8");
-console.log('=========')
-console.log(rawMd)
-console.log('=========')
-console.log('=========')
-console.log(apiMd)
-console.log('=========')
 const mdContent = injectContentBetweenTags("wc-api", rawMd, apiMd);
 
 fs.writeFileSync(readmePath, mdContent);
