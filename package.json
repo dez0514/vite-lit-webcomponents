@@ -19,7 +19,7 @@
     "analyze": "custom-elements-manifest analyze --globs 'src/components/web-button.ts' --outdir dist",
     "dev": "vite",
     "build": "tsc && vite build && npm run copy && npm run docs",
-    "copy": "cp src/index.html dist/",
+    "copy": "cp ./index.html dist/",
     "preview": "vite preview",
     "docs": "npm run analyze && esmo scripts/docs.ts",
     "prepublishOnly": "npm run build"
