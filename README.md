@@ -1,4 +1,20 @@
-#### how to use
+## Usage
+
+```bash
+npm i vite-lit-webcomponents
+```
+
+```html
+<!-- cdn -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/vite-lit-webcomponents"><script>
+<web-button>按钮</web-button>
+```
+### By npm
+```ts
+import 'vite-lit-webcomponents'
+```
+
+
 <!-- wc-api:start -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
