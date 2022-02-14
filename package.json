@@ -1,6 +1,7 @@
 {
   "name": "vite-lit-webcomponents",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "zwd",
   "main": "dist/index.es.js",
   "exports": {
     ".": "./dist/index.es.js"
@@ -18,7 +19,7 @@
     "analyze": "custom-elements-manifest analyze --globs 'src/components/web-button.ts' --outdir dist",
     "dev": "vite",
     "build": "tsc && vite build && npm run copy && npm run docs",
-    "copy": "cp ./index.html dist/",
+    "copy": "cp src/index.html dist/",
     "preview": "vite preview",
     "docs": "npm run analyze && esmo scripts/docs.ts",
     "prepublishOnly": "npm run build"
