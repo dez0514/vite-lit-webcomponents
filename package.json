@@ -1,7 +1,7 @@
 {
   "name": "vite-lit-webcomponents",
   "version": "1.0.0",
-  "author": "zwd",
+  "type": "module",
   "main": "dist/index.es.js",
   "exports": {
     ".": "./dist/index.es.js"
@@ -22,7 +22,8 @@
     "copy": "cp ./index.html dist/",
     "preview": "vite preview",
     "docs": "npm run analyze && esmo scripts/docs.ts",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "buildOnly": "tsc && vite build"
   },
   "dependencies": {
     "fs": "0.0.1-security",
