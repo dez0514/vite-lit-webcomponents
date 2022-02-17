@@ -21,6 +21,29 @@
 3. classMap, styleMap
 4. unsafeCss, unsafeHtml, unsafeSvg
 5. 利用 :host() 配合选择器，伪类，伪元素
+#### 使用sass
+步骤：
+1. 利用 rollup-plugin-postcss-lit 包，vite.config.ts中添加插件。
+2. 新增一个scss.d.ts文件，所有scss文件导出一个类型校验。
+3. tsconfig.json里面配一下scss.d.ts。
+4. 样式文件.scss与组件文件分开写，正常导入，用法如下示例。
+有点瑕疵：
+1. 使用sass时，明明从scss文件导出引入过来的是类型，但是直接赋值给static styles 虽然生效了，但是ts却提示类型错误.最后只得利用 unsafeCss
+2. scss文件导出的是 CSSResultGroup 对象类型， lit中的css方法，输出的也是该对象类型，但是直接复制，有效果但是提示类型错误。
+```
+import hostStyles from './web-checkbox.scss'
+const mainStyles = css`
+    div {
+        color: red;
+    }
+`
+console.log(hostStyles)
+console.log(mainStyles) // hostStyles 和 mainStyles 明明结构一样。。
+// static styles = hostStyles; // 但是很奇怪，直接赋值类型不对。。。
+static styles = css`
+    ${unsafeCSS(hostStyles)}
+`;
+```
 #### 属性
 类似这么使用：
 ```

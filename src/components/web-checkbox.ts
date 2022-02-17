@@ -1,11 +1,12 @@
 import hostStyles from './web-checkbox.scss'
-import { html, LitElement,CSSResultGroup } from 'lit'
+import { html,css, LitElement, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-console.log(hostStyles) // object
 
 @customElement('web-checkbox')
 export class WebCheckbox extends LitElement {
-    static styles: CSSResultGroup = hostStyles;
+    static styles = css`
+        ${unsafeCSS(hostStyles)}
+    `;
 
     @property({ type: String || Number })
     size = 14
