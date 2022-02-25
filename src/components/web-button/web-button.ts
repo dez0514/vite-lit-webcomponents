@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
-import './web-loading'
-import './web-icon'
+import '../web-loading/web-loading'
+import '../web-icon/web-icon'
 /**
  * Button.
  */
@@ -86,6 +86,9 @@ export class WebButton extends LitElement {
     }
     :host(:not([icon]):not([loading]):empty){
       display:  none;
+    }
+    ::slotted(*){
+      color: pink;
     }
   `
   /** 

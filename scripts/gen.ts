@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { customElementsManifestToMarkdown } from "@custom-elements-manifest/to-markdown";
 import { injectContentBetweenTags } from "./utils";
-import * as manifest from "../dist/custom-elements.json";
+import * as manifest from "../docs/web-button/custom-elements.json";
 
 // ES Module
 // https://github.com/nodejs/help/issues/2907

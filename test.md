@@ -21,7 +21,7 @@
 3. classMap, styleMap
 4. unsafeCss, unsafeHtml, unsafeSvg
 5. 利用 :host() 配合选择器，伪类，伪元素
-#### 使用sass
+#### 使用sass (打包之后，dist根目录会打出 style.css， 影响全局，暂时不用)
 步骤：
 1. 利用 rollup-plugin-postcss-lit 包，vite.config.ts中添加插件。
 2. 新增一个scss.d.ts文件，所有scss文件导出一个类型校验。
