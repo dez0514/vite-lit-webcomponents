@@ -18,6 +18,6 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts","src/scss.d.ts","script/*.ts"],
+  "include": ["src/**/*.ts","script/**/*.ts"],
   "exclude": []
 }

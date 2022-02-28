@@ -30,10 +30,13 @@
       .extra {
         background-color:aquamarine;
       }
+      /* web-switch{
+          font-size:20px;
+      } */
     </style>
   </head>
   <body>
-    <web-icon name="user" size="26"></web-icon>
+    <!-- <web-icon name="user" size="26"></web-icon>
     <web-icon name="user" color="red"></web-icon>
     <web-icon name="location"></web-icon>
     <web-icon name="message"></web-icon>
@@ -67,7 +70,12 @@
     <div style="margin-top: 5px;">
       <web-button block>block</web-button>
       <web-button style="margin-top: 5px;" type="primary" block>block</web-button>
-    </div>
-    <web-checkbox></web-checkbox>
+    </div> -->
+    <web-switch id="myswitch"></web-switch>
+    <web-switch></web-switch>
   </body>
+  <script>
+    var myswitch = document.getElementById('myswitch')
+    myswitch.setAttribute('value', true)
+  </script>
 </html>

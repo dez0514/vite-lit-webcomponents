@@ -5,5 +5,6 @@
               date-picker, color-picker
 组件组合：buttonGroup,
 3. 补充文档
+
 bug:
 1. icon 路径有问题，npm包里找不到src/iconfont/icon.svg
